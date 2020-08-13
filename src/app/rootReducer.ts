@@ -1,8 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import songsReducer from '../pages/demo/slice'
+import newsReducer from '../pages/demo/slice'
 
 const rootReducer = combineReducers({
-  songs: songsReducer,
+  news: newsReducer,
 })
 
 export type RootState = ReturnType<typeof rootReducer>

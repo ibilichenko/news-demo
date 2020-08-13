@@ -1,37 +1,28 @@
-import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit'
-import { SongsState } from './types'
-import { fetchSongList } from '../../api/fakeMusicAPI/fakeMusicAPI'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { NewsState } from './types'
+import axios from 'axios';
 
-const songsInitialState: SongsState = {
+const songsInitialState: NewsState = {
   data: [],
   isLoading: false,
   error: null,
 }
 
-export const fetchSongs = createAsyncThunk('songs/fetchList', async () => {
+export const fetchSongs =  createAsyncThunk('songs/fetchList', async (page: number, thunkAPI) => {
   try {
-    const response = await fetchSongList()
-
+    const response = await axios.get(`https://api.currentsapi.services/v1/latest-news?language=en&apiKey=R92E1iCuqR5PoGglxG-8Gv9UO5XQY-kVqYoz1jlwtIoPUaz5&page_number=${page}`)
+    console.log(response)
     return response
   } catch (e) {
     return e.massage
   }
 })
 
-const songsSlice = createSlice({
-  name: 'songs',
+const newsSlice = createSlice({
+  name: 'news',
   initialState: songsInitialState,
   reducers: {
-    addToFavorites: (state, action: PayloadAction<string>) => {
-      const song = state.data.find((el) => el.id === action.payload)
-
-      if (song) {
-        song.favorite = true
-      }
-    },
-    cleanSongs: (state) => {
-      state.data = []
-    },
+    
   },
   extraReducers: (builder) => {
     builder.addCase(fetchSongs.pending, (state, action) => {
@@ -39,7 +30,7 @@ const songsSlice = createSlice({
     })
     builder.addCase(fetchSongs.fulfilled, (state, action) => {
       state.isLoading = false
-      state.data = action.payload
+      state.data = action.payload.data.news
     })
     builder.addCase(fetchSongs.rejected, (state, action) => {
       state.isLoading = false
@@ -48,6 +39,4 @@ const songsSlice = createSlice({
   },
 })
 
-export const { addToFavorites, cleanSongs } = songsSlice.actions
-
-export default songsSlice.reducer
+export default newsSlice.reducer

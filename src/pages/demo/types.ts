@@ -1,11 +1,18 @@
-import { ISong } from '../../api/fakeMusicAPI/types'
 
-interface ISongWithFavorite extends ISong {
-  favorite?: boolean
+
+interface IArticle {
+  id: string, 
+  title: string,
+  description: string,
+  author: string,
+  image: string,
+  language: string,
+  category: Array<string>,
+  published: string
 }
 
-export type SongsState = {
-  data: ISongWithFavorite[]
+export type NewsState = {
+  data: IArticle[]
   isLoading: boolean
   error: string | null
 }

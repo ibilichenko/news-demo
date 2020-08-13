@@ -1,58 +1,63 @@
-import React, { useEffect } from 'react'
-import { cleanSongs, fetchSongs, addToFavorites } from './slice'
+import React, { useEffect, useState } from 'react'
+import { fetchSongs } from './slice'
 import { useDispatch, useSelector } from 'react-redux'
-import { List, Typography } from 'antd'
+import { List, Pagination} from 'antd'
 import { RootState } from '../../app/rootReducer'
-import { SongsState } from './types'
+import { NewsState } from './types'
+
 
 import styles from './styles.module.css'
 import FavoriteButton from './components/favoriteButton'
 
-const SongsPage = () => {
+
+
+const NewsLine = () => {
+
+  const [page, changePage] = useState(0);
   const dispatch = useDispatch()
-  const { data, isLoading } = useSelector<RootState, SongsState>(
-    (state) => state.songs
+  const { data, isLoading } = useSelector<RootState, NewsState>(
+    (state) => state.news
   )
 
   useEffect(() => {
-    dispatch(fetchSongs())
 
-    return () => {
-      dispatch(cleanSongs())
-    }
-  }, [dispatch])
+      dispatch(fetchSongs(page))
+    
+    console.log('update')
+  },[page])
 
   return (
-    <div className={styles.container}>
-      <Typography.Title level={2}>Good luck! Have Fun!</Typography.Title>
-      <Typography.Title type="secondary" level={3}>
-        This is an example
-      </Typography.Title>
-
-      <List
-        dataSource={data}
-        itemLayout="horizontal"
-        loading={isLoading}
-        renderItem={(item) => (
-          <List.Item
-            key={item.id}
-            actions={[
-              <FavoriteButton
-                isFavorite={item.favorite}
-                onClick={() => dispatch(addToFavorites(item.id))}
-              />,
-            ]}
-          >
-            <List.Item.Meta
-              title={<a href="https://ant.design">{item.name}</a>}
-              description={item.artist}
+    <>
+    <List
+    dataSource={data}
+    itemLayout="vertical"
+    size="large"
+    loading={isLoading}
+    renderItem={item => (
+      <List.Item
+        key={item.id}
+        extra={
+          <img
+            width={272}
+            alt="logo"
+            src={item.image ==='None' ? 'https://www.allianceplast.com/wp-content/uploads/2017/11/no-image.png' : item.image }
+          />
+        }
+      >
+        <List.Item.Meta
+              title={<a href="https://ant.design">{item.title}</a>}
+              description={item.description}
             />
-            <span>{item.album}</span>
           </List.Item>
-        )}
-      />
-    </div>
+    )}
+  />
+  <Pagination
+  onChange={(page) => changePage(page)}
+   defaultCurrent={1} 
+   total={50} 
+   />
+  </>
   )
 }
 
-export default SongsPage
+export default NewsLine;
