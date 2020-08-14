@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { fetchSongs } from './slice'
+import { fetchNews } from './slice'
 import { useDispatch, useSelector } from 'react-redux'
 import { List, Pagination} from 'antd'
 import { RootState } from '../../app/rootReducer'
@@ -7,7 +7,7 @@ import { NewsState } from './types'
 
 
 import styles from './styles.module.css'
-import FavoriteButton from './components/favoriteButton'
+
 
 
 
@@ -21,7 +21,7 @@ const NewsLine = () => {
 
   useEffect(() => {
 
-      dispatch(fetchSongs(page))
+      dispatch(fetchNews(page))
     
     console.log('update')
   },[page])

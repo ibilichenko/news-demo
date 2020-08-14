@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import SongsPage from '../component'
+import NewsLine from '../component'
 import  * as actions from '../slice'
 
 jest.mock('react-redux', () => ({
@@ -11,29 +11,18 @@ jest.mock('react-redux', () => ({
 
 jest.mock('antd', () => ({
   List: () => <div/>,
-  Typography: {
-    Title: () => <div/>
-  },
+ 
 }))
 
-describe("SongsPage", () => {
+describe("NewsLine", () => {
   describe('lifecycle', () => {
     it('should call `fetchSongs` on mount', () => {
-      const fetchSongsSpy = jest.spyOn(actions, 'fetchSongs')
-      mount(<SongsPage />)
+      const fetchSongsSpy = jest.spyOn(actions, 'fetchNews')
+      mount(<NewsLine></NewsLine>)
       
       expect(fetchSongsSpy).toBeCalled()
   
       fetchSongsSpy.mockRestore()
-    })
-
-    it('should call `cleanSongs` on unmount', () => {
-      const cleanSongsSpy = jest.spyOn(actions, 'cleanSongs')
-      mount(<SongsPage />).unmount()
-      
-      expect(cleanSongsSpy).toBeCalled()
-  
-      cleanSongsSpy.mockRestore()
     })
   })
 })
