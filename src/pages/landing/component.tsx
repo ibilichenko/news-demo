@@ -7,7 +7,7 @@ const LandingPage = () => {
     <div>
       <span>
         We need to figure out structure of our app. Here a{' '}
-        <Link to={routePaths.demo}>example</Link>
+        <Link to={routePaths.newsLine}>example</Link>
       </span>
     </div>
   )

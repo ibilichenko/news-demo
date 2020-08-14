@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { NewsState } from './types'
+import {getNewsList} from '../../api/NewsApi'
 import axios from 'axios';
 
 const songsInitialState: NewsState = {
@@ -10,7 +11,7 @@ const songsInitialState: NewsState = {
 
 export const fetchSongs =  createAsyncThunk('songs/fetchList', async (page: number, thunkAPI) => {
   try {
-    const response = await axios.get(`https://api.currentsapi.services/v1/latest-news?language=en&apiKey=R92E1iCuqR5PoGglxG-8Gv9UO5XQY-kVqYoz1jlwtIoPUaz5&page_number=${page}`)
+    const response = await getNewsList(page);
     console.log(response)
     return response
   } catch (e) {

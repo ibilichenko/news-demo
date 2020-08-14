@@ -1,5 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit'
-import newsReducer from '../pages/demo/slice'
+import newsReducer from '../pages/newsLine/slice'
 
 const rootReducer = combineReducers({
   news: newsReducer,
