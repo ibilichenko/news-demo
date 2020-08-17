@@ -28,34 +28,34 @@ const NewsLine = () => {
 
   return (
     <>
-    <List
-    dataSource={data}
-    itemLayout="vertical"
-    size="large"
-    loading={isLoading}
-    renderItem={item => (
-      <List.Item
-        key={item.id}
-        extra={
-          <img
-            width={272}
-            alt="logo"
-            src={item.image ==='None' ? 'https://www.allianceplast.com/wp-content/uploads/2017/11/no-image.png' : item.image }
-          />
-        }
-      >
-        <List.Item.Meta
-              title={<a href="https://ant.design">{item.title}</a>}
-              description={item.description}
+      <List
+      dataSource={data}
+      itemLayout="vertical"
+      size="large"
+      loading={isLoading}
+      renderItem={item => (
+        <List.Item
+          key={item.id}
+          extra={
+            <img
+              width={272}
+              alt="logo"
+              src={item.image ==='None' ? 'https://www.allianceplast.com/wp-content/uploads/2017/11/no-image.png' : item.image }
             />
-          </List.Item>
-    )}
-  />
-  <Pagination
-  onChange={(page) => changePage(page)}
-   defaultCurrent={1} 
-   total={50} 
-   />
+          }
+        >
+          <List.Item.Meta
+                title={<a href="https://ant.design">{item.title}</a>}
+                description={item.description}
+              />
+            </List.Item>
+      )}
+    />
+    <Pagination
+    onChange={(page) => changePage(page)}
+    defaultCurrent={1} 
+    total={50} 
+    />
   </>
   )
 }
