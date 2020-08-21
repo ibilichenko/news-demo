@@ -1,8 +1,13 @@
-import { IResponse } from './types';
+import { IResponse, ICategories } from './types';
 import axios from 'axios';
+import {fetchParams} from '../pages/newsLine/types'
 
 
 const apiKey = "R92E1iCuqR5PoGglxG-8Gv9UO5XQY-kVqYoz1jlwtIoPUaz5";
-export const getNewsList = (pageNumber: number):Promise<IResponse> =>  {
-    return axios.get(`https://api.currentsapi.services/v1/latest-news?language=en&apiKey=${apiKey}&page_number=${pageNumber}`)
+export const getNewsList = (fetchParams: fetchParams):Promise<IResponse> =>  {
+    return axios.get(`https://api.currentsapi.services/v1/latest-news${fetchParams.searchParams}${fetchParams.searchParams === '' ? '?' : '&'}apiKey=R92E1iCuqR5PoGglxG-8Gv9UO5XQY-kVqYoz1jlwtIoPUaz5&page_number=${fetchParams.page }`)
+}
+
+export const getCategoriesList = ():Promise<ICategories> => {
+    return axios.get('https://api.currentsapi.services/v1/available/categories');
 }

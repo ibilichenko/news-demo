@@ -1,0 +1,33 @@
+.newsContainer {
+    width: 650px;
+    padding: 30px;
+    border: 1px solid #C0C0C0;
+    border-radius: 30px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+}
+.newsImages {
+    width: 600px;
+    margin-top: 10px;
+}
+.author-avatar {
+    width: 60px;
+    border-radius: 40px;
+    margin-right: 10px;
+}
+.articleInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.categories {
+    display: flex;
+    margin-bottom: 1em;
+}
+.authorInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

@@ -1,4 +1,5 @@
 export const routePaths = {
   landing: '/',
-  newsLine: '/newsLine',
+  newsLine: '/news',
+  separateNews: '/news/:newsId',
 }

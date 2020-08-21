@@ -1,3 +1,22 @@
 .container {
   padding: 2rem;
 }
+.newsLine {
+  color: red;
+  width: 1300px;
+}
+.newsPage {
+  display: flex;
+}
+.mainLine {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.filtersEditor {
+  display: flex;
+}
+.sidebar {
+  margin-top: 40px;
+}
