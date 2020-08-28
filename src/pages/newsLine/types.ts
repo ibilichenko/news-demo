@@ -1,4 +1,5 @@
-import {IArticle} from '../../api/types'
+import { type } from 'os'
+import { IArticle } from '../../api/types'
 
 export type NewsState = {
   data: IArticle[]
@@ -12,20 +13,23 @@ export interface fetchParams {
   searchParams: string
 }
 
-export type UrlParams  = {
-  match: {
-    url: string,
-    path: string,
-    params: {
-      newsId: string
-    },
-    isExact: boolean
+export type UrlParams = {
+  match: IMatch,
+  location: ILocation
+}
+export type IMatch = {
+  url: string,
+  path: string,
+  params: {
+    newsId?: string
   },
-  location: {
-    search: string,
-    hash: string,
-    key: string,
-    pathname: string,
-    state: string
-  }
- }
+  isExact: boolean
+}
+
+export type ILocation = {
+  search: string,
+  hash: string,
+  pathname: string,
+  state: string | undefined,
+  key?: string
+}

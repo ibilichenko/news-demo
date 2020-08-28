@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { NewsState } from './types'
 import {getNewsList, getCategoriesList} from '../../api/NewsApi'
 import {fetchParams} from './types'
-import axios from 'axios';
 
 const songsInitialState: NewsState = {
   data: [],
@@ -15,8 +14,7 @@ const songsInitialState: NewsState = {
 export const fetchNews =  createAsyncThunk('news/fetchList', async (fetchParams: fetchParams, thunkAPI) => {
   try {
     const response = await getNewsList(fetchParams);
-    console.log(response)
-    return response
+    return response.data.news;
   } catch (e) {
     return e.massage
   }
@@ -25,8 +23,7 @@ export const fetchNews =  createAsyncThunk('news/fetchList', async (fetchParams:
 export const fetchCategories = createAsyncThunk('categories', async () => {
   try {
     const response = await getCategoriesList();
-    console.log(response);
-    return response;
+    return response.data.categories;
   } catch (e) {
     return e.message;
   }
@@ -44,14 +41,14 @@ const newsSlice = createSlice({
     })
     builder.addCase(fetchNews.fulfilled, (state, action) => {
       state.isLoading = false
-      state.data = action.payload.data.news
+      state.data = action.payload
     })
     builder.addCase(fetchNews.rejected, (state, action) => {
       state.isLoading = false
       state.error = action.error as any
     })
     builder.addCase(fetchCategories.fulfilled, (state, action) => {
-      state.categories = action.payload.data.categories
+      state.categories = action.payload
     })
   },
 })

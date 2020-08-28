@@ -2,21 +2,36 @@
   padding: 2rem;
 }
 .newsLine {
-  color: red;
-  width: 1300px;
+  width: 1000px;
+  background-color: white;
 }
 .newsPage {
   display: flex;
-}
-.mainLine {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+}
+
+.ant-list-item {
+  color: red;
 }
 .filtersEditor {
   display: flex;
+  border-bottom-color: #DCDCDC; /* Цвет линии справа */
+  border-bottom-style: solid; /* Стиль линии */
+  border-bottom-width: 1px;
+  padding: 20px;
 }
-.sidebar {
-  margin-top: 40px;
+
+.ant-checkbox-group {
+  height: 200px;
+}
+
+.list {
+  width: 400px;
+  float: left;
+  width: 80%;
+}
+.block {
+  max-width: 100%;
+  height: auto;
+  overflow:hidden
 }
