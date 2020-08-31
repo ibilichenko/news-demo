@@ -36,7 +36,7 @@ const SideBar = ({data}:{data: string[]}) => {
     }, [dispatch])
     return (
         <div className={styles.sidebarWrapper}>
-            <div className={styles.title}><p>Category</p><b>{categories.length}</b></div>
+            <div className={styles.title}><p>Category</p><b>{categories?.length}</b></div>
             <div className={styles.sidebar}>
                 <Checkbox.Group
                     value={data.length > 0 ? data[0].split(',') : []}
@@ -46,7 +46,7 @@ const SideBar = ({data}:{data: string[]}) => {
                 >
                     <ul>
                         {
-                            categories.map((category, index) => {
+                            categories?.map((category, index) => {
                                 return (
                                     <li style={{listStyleType: "none", marginLeft: 0}} key={index}><Checkbox key={index.toString()} value={category}>{category}</Checkbox></li>
                                 )

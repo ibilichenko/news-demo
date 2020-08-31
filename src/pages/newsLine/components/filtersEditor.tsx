@@ -14,7 +14,7 @@ const FiltersEditor = ({ data }: { data: string[] }) => {
     return (
       <div className={styles.filtersContainer}>
         <div className={styles.cancelBtn} onClick={() => history.push('/news/')}>Cancel</div>
-        <ul style={{display: 'flex'}}>
+        <ul className='filtersCont' style={{display: 'flex'}}>
         {
           params.map((filter, index) => {
             return (
