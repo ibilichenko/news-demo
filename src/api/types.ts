@@ -1,3 +1,6 @@
+import { Interface } from "readline";
+import { idText } from "typescript";
+
 export interface IArticle {
   id: string,
   title: string,
@@ -25,5 +28,26 @@ export interface ICategories {
     description: string,
     status: string
   }
+}
 
+export interface ILanguages {
+  data: {
+    languages: {
+      [propName: string]: string
+    },
+    description: string,
+    status: string
+  }
+}
+
+export interface IComments {
+  data: Array<IComment>
+}
+
+export interface IComment {
+  _id: string,
+    author: string,
+    newsId: string,
+    text: string,
+    __v: string
 }

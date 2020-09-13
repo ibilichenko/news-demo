@@ -1,4 +1,3 @@
-import { type } from 'os'
 import { IArticle } from '../../api/types'
 
 export type NewsState = {
@@ -6,6 +5,9 @@ export type NewsState = {
   isLoading: boolean
   error: string | null
   categories: string[]
+  languages: {
+    [propName: string]: string
+  }
 }
 export interface fetchParams {
   page: number,

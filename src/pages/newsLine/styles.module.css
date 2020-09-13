@@ -7,7 +7,6 @@
 }
 .newsPage {
   display: flex;
-  justify-content: center;
 }
 
 .ant-list-item {
@@ -19,6 +18,12 @@
   border-bottom-style: solid; /* Стиль линии */
   border-bottom-width: 1px;
   padding: 20px;
+}
+.filtersEditor:active, :focus {
+  box-shadow:
+        0 0 0 3px #ffffff,
+        0 0 0 4px #2f7cc0;
+  outline: none;
 }
 
 .ant-checkbox-group {

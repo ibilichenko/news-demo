@@ -1,8 +1,8 @@
 import React from 'react'
-
 import { List, Pagination, Skeleton } from 'antd'
 import { Link } from 'react-router-dom'
 import { connect } from "react-redux";
+
 import { fetchNews } from '../slice'
 import { IMatch, ILocation } from '../types'
 import { IArticle } from '../../../api/types'
@@ -25,12 +25,12 @@ export class NewsLine extends React.Component<NewsLineProps> {
   componentDidUpdate(prevProps: any, prevState: any) {
     if (prevProps.location !== this.props.location || prevState.page !== this.state.page)
       this.props.fetchNews(this.state.page, this.props.location)
-      console.log(this.state.page)
   }
   render() {
     return (
       <div className={styles.mainLine}>
         <List
+          loading={this.props.isLoading}
           className={styles.newsLine}
           dataSource={this.props.data}
           itemLayout="vertical"
@@ -44,7 +44,7 @@ export class NewsLine extends React.Component<NewsLineProps> {
                     <img
                       width={272}
                       alt="logo"
-                      src={item.image === 'None' ? 'https://www.allianceplast.com/wp-content/uploads/2017/11/no-image.png' : item.image}
+                      src={item.image === 'None' ? 'https://brilliant24.ru/files/cat/bg_template_01.png' : item.image}
                     />
                   }
                 >
