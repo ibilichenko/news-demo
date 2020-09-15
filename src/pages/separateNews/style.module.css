@@ -1,50 +1,48 @@
 .newsContainer {
-    width: 800px;
-    border-radius: 5px;
-    background-color: white;
-    padding: 10px;
-    margin-top: 20px;
-    box-shadow: 0 0 2px 	#808080;
-
+  width: 800px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px;
+  margin-top: 20px;
+  box-shadow: 0 0 2px #808080;
 }
 .container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 40px;
-  
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
 }
 .site-page-header {
-    width: 780px;
-    border-bottom: 1px solid rgb(235, 237, 240);
-    background-color: white !important;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    position: fixed;
-    top: 0;
-  }
-  .authorInfo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 780px;
+  border-bottom: 1px solid rgb(235, 237, 240);
+  background-color: white !important;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  position: fixed;
+  top: 0;
+}
+.authorInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .articleInfo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .newsImages {
-    width:780px;
-    margin-top: 10px;
+  width: 780px;
+  margin-top: 10px;
 }
 
 .categories {
-    display: flex;
-    margin-bottom: 1em;
+  display: flex;
+  margin-bottom: 1em;
 }
 .errorMessage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

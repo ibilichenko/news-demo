@@ -4,7 +4,7 @@ import commentReducer from '../pages/separateNews/slice'
 
 const rootReducer = combineReducers({
   news: newsReducer,
-  comments: commentReducer
+  comments: commentReducer,
 })
 
 export type RootState = ReturnType<typeof rootReducer>

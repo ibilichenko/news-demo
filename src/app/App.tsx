@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { routePaths } from '../routes'
 import newsPage from '../pages/newsLine/NewsPage'
 import LandingPage from '../pages/landing'
-import separateNews from '../pages/separateNews/separateNews'
+import SeparateNews from '../pages/separateNews/SeparateNews'
 
 import 'antd/dist/antd.css'
 
@@ -13,7 +13,7 @@ function App() {
     <Router>
       <Route exact path={routePaths.landing} component={LandingPage} />
       <Route exact path={routePaths.newsLine} component={newsPage} />
-      <Route path={routePaths.separateNews} component={separateNews} />
+      <Route path={routePaths.separateNews} component={SeparateNews} />
     </Router>
   )
 }

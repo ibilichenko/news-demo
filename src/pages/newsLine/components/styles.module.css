@@ -1,110 +1,112 @@
-  .sidebar::-webkit-scrollbar { /* 1 - скроллбар */
-    width: 8px;
-    height: 4px;
-    border-radius: 6px;
-    background-color: #DCDCDC;
-    margin-left: 20px;
-  }
-  .sidebar::-webkit-scrollbar-thumb { /* 5 - ползунок */
-    border-radius: 6px;
-    background-color: #A9A9A9;
-  }
-  .sidebar {
-    padding-top: 5px;
-    padding-right: 30px;
-    overflow: scroll;
-    height: 300px;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-  .title {
-    display: flex;
-  }
-  .header {
-    width: 100%;
-    height: 70px;
-    background-color: #002137;
-  }
-  
-  .skeletonBox {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .sidebarWrapper {
-    border-right-color: #DCDCDC; /* Цвет линии справа */
-    border-right-style: solid; /* Стиль линии */
-    border-right-width: 1px;
-    height: 800px;
-    background-color: rgba(255, 255, 255, 0.9);
-    float: left;
-    width: 220px; 
-  }
-  .mainLine {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .sidebarWrapper p {
-    font-size: 15px;
-    color: #3e77aa;
-    margin-right: 10px;
-    font-weight: 600;
-  }
-  .sidebarWrapper b {
-    color: #A9A9A9;
-    font-weight: 600;
-  }
-  .cancelBtn {
-    width: 100px;
-    height: 35px;
-    border: 1px solid #ff8989;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 500;
-    margin-right: 30px;
-  }
-  .cancelBtn:hover {
-    background: #ff8989;
-    color: white;
-  }
-  .filtersContainer {
-    display: flex;
-    border-bottom-color: #DCDCDC; /* Цвет линии справа */
-    border-bottom-style: solid; /* Стиль линии */
-    border-bottom-width: 1px;
-    padding: 10px
-  }
-  .filterTab {
-    width: 100px;
-    height: 35px;
-    border: 1px solid #d2d2d2;
-    background: white;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 500;
-    margin-left: 10px;
-  }
+.sidebar::-webkit-scrollbar {
+  /* 1 - скроллбар */
+  width: 8px;
+  height: 4px;
+  border-radius: 6px;
+  background-color: #dcdcdc;
+  margin-left: 20px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  /* 5 - ползунок */
+  border-radius: 6px;
+  background-color: #a9a9a9;
+}
+.sidebar {
+  padding-top: 5px;
+  padding-right: 30px;
+  overflow: scroll;
+  height: 300px;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  display: flex;
+}
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: #002137;
+}
 
-  .filterTab:hover {
-    background: #F5F5F5;
-  }
-  ul {
-    padding-inline-start: 0px;
-  }
-  .firstBlock {
-    padding: 30px;
-    border-bottom-color: #DCDCDC; /* Цвет линии справа */
-    border-bottom-style: solid; /* Стиль линии */
-    border-bottom-width: 1px;
-  }
-  .secondBlock {
-    padding: 30px;
-  }
+.skeletonBox {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebarWrapper {
+  border-right-color: #dcdcdc; /* Цвет линии справа */
+  border-right-style: solid; /* Стиль линии */
+  border-right-width: 1px;
+  height: 800px;
+  background-color: rgba(255, 255, 255, 0.9);
+  float: left;
+  width: 220px;
+}
+.mainLine {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sidebarWrapper p {
+  font-size: 15px;
+  color: #3e77aa;
+  margin-right: 10px;
+  font-weight: 600;
+}
+.sidebarWrapper b {
+  color: #a9a9a9;
+  font-weight: 600;
+}
+.cancelBtn {
+  width: 100px;
+  height: 35px;
+  border: 1px solid #ff8989;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  margin-right: 30px;
+}
+.cancelBtn:hover {
+  background: #ff8989;
+  color: white;
+}
+.filtersContainer {
+  display: flex;
+  border-bottom-color: #dcdcdc; /* Цвет линии справа */
+  border-bottom-style: solid; /* Стиль линии */
+  border-bottom-width: 1px;
+  padding: 10px;
+}
+.filterTab {
+  width: 100px;
+  height: 35px;
+  border: 1px solid #d2d2d2;
+  background: white;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.filterTab:hover {
+  background: #f5f5f5;
+}
+ul {
+  padding-inline-start: 0px;
+}
+.firstBlock {
+  padding: 30px;
+  border-bottom-color: #dcdcdc; /* Цвет линии справа */
+  border-bottom-style: solid; /* Стиль линии */
+  border-bottom-width: 1px;
+}
+.secondBlock {
+  padding: 30px;
+}

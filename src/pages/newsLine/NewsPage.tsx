@@ -1,6 +1,6 @@
 import React from 'react'
 import { BackTop } from 'antd'
-import {parse} from 'qs'
+import { parse } from 'qs'
 
 import NewsLine from './components/NewsLine'
 import FiltersEditor from './components/FiltersEditor'
@@ -14,9 +14,13 @@ const NewsPage = ({ match, location }: UrlParams) => {
   return (
     <>
       <Header />
-      <FiltersEditor data={Object.values(parse(location.search.slice(1))) as string[]} />
+      <FiltersEditor
+        data={Object.values(parse(location.search.slice(1))) as string[]}
+      />
       <div className={styles.newsPage}>
-        <Sidebar data={Object.values(parse(location.search.slice(1))) as string[]} />
+        <Sidebar
+          data={Object.values(parse(location.search.slice(1))) as string[]}
+        />
         <BackTop />
         <NewsLine match={match} location={location}></NewsLine>
       </div>
@@ -24,4 +28,4 @@ const NewsPage = ({ match, location }: UrlParams) => {
   )
 }
 
-export default NewsPage;
+export default NewsPage

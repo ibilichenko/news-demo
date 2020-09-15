@@ -14,15 +14,14 @@
 }
 .filtersEditor {
   display: flex;
-  border-bottom-color: #DCDCDC; /* Цвет линии справа */
+  border-bottom-color: #dcdcdc; /* Цвет линии справа */
   border-bottom-style: solid; /* Стиль линии */
   border-bottom-width: 1px;
   padding: 20px;
 }
-.filtersEditor:active, :focus {
-  box-shadow:
-        0 0 0 3px #ffffff,
-        0 0 0 4px #2f7cc0;
+.filtersEditor:active,
+:focus {
+  box-shadow: 0 0 0 3px #ffffff, 0 0 0 4px #2f7cc0;
   outline: none;
 }
 
@@ -38,5 +37,5 @@
 .block {
   max-width: 100%;
   height: auto;
-  overflow:hidden
+  overflow: hidden;
 }
