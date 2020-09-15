@@ -12,7 +12,7 @@ function deleteCategory(paramsStr: string, chosenParam: string | null): string {
     if (parsedParamsStr.indexOf(chosenParam) === 0) {
       const categoryToSearch = paramsStr.replace(
         `${chosenParam}${parsedParamsStr.length > 1 ? ',' : ''}`,
-        ''
+        '' 
       )
       return categoryToSearch.length > 0 ? `&category=${categoryToSearch}` : ''
     } else {
