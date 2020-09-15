@@ -60,6 +60,7 @@
     "@types/webpack-env": "^1.15.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
+    "husky": "^4.3.0",
     "prettier": "2.0.5"
   },
   "jest": {
@@ -67,5 +68,8 @@
       "src/**/*.{ts,tsx}",
       "!src/app/*.{ts,tsx}"
     ]
+  },
+  "hooks": {
+    "pre-commit": "npm format"
   }
 }
