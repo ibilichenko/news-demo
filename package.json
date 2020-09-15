@@ -61,6 +61,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
     "husky": "^4.3.0",
+    "lint-staged": "^10.3.0",
     "prettier": "2.0.5"
   },
   "jest": {
@@ -69,7 +70,14 @@
       "!src/app/*.{ts,tsx}"
     ]
   },
-  "hooks": {
-    "pre-commit": "npm format"
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "prettier --config .prettierrc --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
