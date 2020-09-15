@@ -110,3 +110,10 @@ ul {
 .secondBlock {
   padding: 30px;
 }
+.filtersCont {
+  display: flex;
+}
+.listItem {
+  list-style-type: 'none';
+  margin-left: 0;
+}

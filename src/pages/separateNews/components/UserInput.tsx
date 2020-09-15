@@ -45,7 +45,7 @@ const UserInput = ({ newsId }: { newsId: string }) => {
           placeholder="Enter your username"
         />
       </Form.Item>
-      <div style={{ display: 'flex' }}>
+      <div className={styles.inline}>
         <Form.Item
           label="Comment"
           name="text"

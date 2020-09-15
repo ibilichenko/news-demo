@@ -19,9 +19,8 @@ const AboutArticle = ({
     <div className={styles.aboutArticle}>
       <div className={styles.aboutAuthor}>
         <Avatar
-          style={{
-            backgroundColor: '#87d068',
-          }}
+        className={styles.avatar}
+          
           icon={<UserOutlined />}
         />
         <span className={styles.bold}>{author}</span>

@@ -62,7 +62,7 @@ const Sidebar = ({ data }: { data: string[] }) => {
               {categories?.map((category, index) => {
                 return (
                   <li
-                    style={{ listStyleType: 'none', marginLeft: 0 }}
+                    className={styles.listItem}
                     key={index}
                   >
                     <Checkbox key={index.toString()} value={category}>
@@ -96,7 +96,7 @@ const Sidebar = ({ data }: { data: string[] }) => {
             {Object.keys(languages)?.map((language, index) => {
               return (
                 <li
-                  style={{ listStyleType: 'none', marginLeft: 0 }}
+                  className={styles.listItem}
                   key={index}
                 >
                   <Radio key={index.toString()} value={languages[language]}>

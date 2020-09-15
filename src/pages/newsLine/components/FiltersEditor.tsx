@@ -39,10 +39,10 @@ const FiltersEditor = ({ data }: { data: string[] }) => {
         >
           Cancel
         </div>
-        <ul className="filtersCont" style={{ display: 'flex' }}>
+        <ul className={styles.filtersCont}>
           {params.map((filter, index) => {
             return (
-              <li style={{ listStyleType: 'none', marginLeft: 0 }} key={index}>
+              <li className={styles.listItem} key={index}>
                 <button
                   id={filter}
                   onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
@@ -62,7 +62,7 @@ const FiltersEditor = ({ data }: { data: string[] }) => {
               </li>
             )
           })}
-          <li style={{ listStyleType: 'none', marginLeft: 0 }}>
+          <li className={styles.listItem}>
             <button className={styles.filterTab}>{data[0]}</button>
           </li>
         </ul>

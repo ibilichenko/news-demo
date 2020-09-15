@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 import CommentList from './CommentList'
-import { fetchComments } from '../slice'
 import { CommentsState } from '../types'
 import { RootState } from '../../../app/rootReducer'
 
@@ -14,11 +13,6 @@ const CommentWrap = ({ newsId }: { newsId: string }) => {
   const handleClick = () => {
     changeState(isOpen === false ? true : false)
   }
-
-  const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(fetchComments(newsId as string))
-  }, [dispatch, newsId])
   const { comments } = useSelector<RootState, CommentsState>(
     (state) => state.comments
   )

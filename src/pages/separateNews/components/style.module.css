@@ -47,3 +47,9 @@
   font-weight: 600;
   margin-left: 10px;
 }
+.inline {
+  display: flex;
+}
+.avatar {
+  background-color: '#87d068'
+}
